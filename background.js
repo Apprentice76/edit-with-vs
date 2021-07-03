@@ -14,9 +14,26 @@ chrome.runtime.onInstalled.addListener(() => {
 	chrome.contextMenus.create(contextProperties)
 })
 
-function doThis(info, _) {
-    chrome.runtime.connectNative('com.skyly.vscode.native')
-	console.log('selectedText:', info.selectionText)
+function copyText(str) {
+	const document = chrome.extensions.getBackgroundPage().document
+	const text = document.createElement('textarea')
+	text.value = str
+	document.body.appendChild(text)
+	text.select()
+	document.execCommand('copy')
+	document.body.removeChild(text)
+}
+
+function doThis(info, tab) {
+	console.log('tab:', tab, '\ninfo:', info)
+	// console.log('selectedText:', info.selectionText)
+	// const port = chrome.runtime.connectNative('com.skyly.vscode.native')
+	const text = document.createElement('textarea')
+	text.value = info.selectionText
+	document.body.appendChild(text)
+	text.select()
+	document.execCommand('copy')
+	document.body.removeChild(text)
 }
 
 chrome.contextMenus.onClicked.addListener(doThis)
