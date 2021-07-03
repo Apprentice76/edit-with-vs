@@ -1,13 +1,19 @@
 chrome.runtime.onMessage.addListener(
     (req, sender, resp) => {
-        const text = document.createElement('textarea')
-        text.innerHTML = req.selection
-        console.log('received:', req.selection)
-        document.body.appendChild(text)
-        text.focus()
-		text.select()
-		document.execCommand('copy')
-        resp({ q: 'success' })
+        if (req.q === 'getSelection') {
+            const text = document.createElement('textarea')
+            text.innerHTML = window.getSelection().toString()
+            console.log('received:', req.selection)
+            document.body.appendChild(text)
+            text.focus()
+            text.select()
+            document.execCommand('copy')
+            document.body.removeChild(text)
+            resp({ q: 'success' })
+            // return true
+        } else {
+            resp({ q: 'failure'})
+        }
     }
 )
 
