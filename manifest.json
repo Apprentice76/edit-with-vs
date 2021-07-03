@@ -6,7 +6,7 @@
 	"background": {
 		"service_worker": "background.js"
 	},
-	"permissions": ["contextMenus", "nativeMessaging", "activeTab", "tabs"],
+	"permissions": ["contextMenus", "nativeMessaging"],
 	"action": {
 		"default_icon": {
 			"16": "img/icon16.png",
