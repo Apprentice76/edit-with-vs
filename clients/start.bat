@@ -1,2 +1,2 @@
 @echo off
-powershell Get-Clipboard | code index.js -
+powershell Get-Clipboard | code -
