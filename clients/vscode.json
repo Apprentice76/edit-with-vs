@@ -1,0 +1,9 @@
+{
+    "name": "com.skyly.vscode.native",
+    "description": "Starts VS Code",
+    "path": "start.bat",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://kmbgkolpblkidpdgmmneffchpnacodod/"
+    ]
+}
