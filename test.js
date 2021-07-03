@@ -1,15 +1,13 @@
 chrome.runtime.onMessage.addListener(
     (req, sender, resp) => {
         const text = document.createElement('textarea')
-        text.value = req.selection
+        text.innerHTML = req.selection
         console.log('received:', req.selection)
-		document.body.appendChild(text)
+        document.body.appendChild(text)
+        text.focus()
 		text.select()
 		document.execCommand('copy')
-        document.body.removeChild(text)
-        // chrome.runtime.connectNative('com.skyly.vscode.native')
         resp({ q: 'success' })
-        // return true
     }
 )
 

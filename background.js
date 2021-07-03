@@ -21,11 +21,21 @@ async function doThis(info, tab) {
 		(resp) => {
 			if (resp.q === 'success') {
 				console.log(resp.q)
-				chrome.runtime.connectNative('com.skyly.vscode.native')
+				let port = chrome.runtime.connectNative(
+					'com.skyly.vscode.native'
+				)
+
+				port.onMessage.addListener((msg) => {
+					console.log('Received' + msg)
+				})
+				port.onDisconnect.addListener(() => {
+					console.log('Disconnected')
+                })
+                port.postMessage('Hi')
 			}
 		}
 	)
-	// ping(tab.id, info.selectionText)
 }
 
 chrome.contextMenus.onClicked.addListener(doThis)
+
