@@ -1,5 +1,5 @@
 {
-    "name": "com.skyly.vscode.native",
+    "name": "com.hksm.vscode.native",
     "description": "Starts VS Code",
     "path": "start.bat",
     "type": "stdio",

@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
 	let contextProperties = {
 		contexts: ['selection'],
-		title: 'Open in VS Code',
+		title: 'Edit with VS Code',
 		visible: true,
 		id: 'main',
 	}
@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(() => {
 function doThis(_, tab) {
 	chrome.tabs.sendMessage(tab.id, { q: 'getSelection' }, (resp) => {
 		if (resp?.q === 'success') {
-			chrome.runtime.connectNative('com.skyly.vscode.native')
+			chrome.runtime.connectNative('com.hksm.vscode.native')
 			console.log(resp.q)
 		}
 	})

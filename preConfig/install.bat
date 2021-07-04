@@ -1,5 +1,5 @@
 @echo off
-set key=com.skyly.vscode.native
+set key=com.hksm.vscode.native
 
 cd /d "%~dp0"
 cd ..
