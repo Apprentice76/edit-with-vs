@@ -1,7 +1,7 @@
 {
 	"name": "Edit with VS Code",
 	"description": "Opens the selected text in VS Code",
-	"version": "1.0.1",
+	"version": "1.2.1",
 	"manifest_version": 3,
 	"background": {
 		"service_worker": "background.js"

@@ -2,7 +2,7 @@
 > _Opens the selected text in a VS Code text file_
 
 ## Installation
-- Run install.bat from preConfig prior to adding the extension
+- Run install.bat from `config` prior to adding the extension
 - Open extensions tab in Chrome, turn developer mode on
 - Select `LOAD UNPACKED`, then select the extension folder in dialog box
 - It should be installed, refresh any page, then right-click & select 'Edit with VS Code' from the context menu
