@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener((req, sender, resp) => {
+chrome.runtime.onMessage.addListener((req, _, sendResp) => {
 	if (req.q === 'getSelection') {
 		const element = document.createElement('textarea')
 		element.innerHTML = window.getSelection().toString()
@@ -6,13 +6,12 @@ chrome.runtime.onMessage.addListener((req, sender, resp) => {
         element.style.position = 'absolute'
         element.style.left = '-9999px'
 		document.body.appendChild(element)
-		element.focus()
 		element.select()
 		document.execCommand('copy')
         document.body.removeChild(element)
-		resp({ q: 'success' })
+		sendResp({ q: 'success' })
         return true
 	} else {
-		resp({ q: 'failure' })
+		sendResp({ q: 'failure' })
 	}
 })
