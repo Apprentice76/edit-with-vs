@@ -1,6 +1,8 @@
 # Edit in VS Code
 > _Opens the selected text in a VS Code text file_
 
+![project demo](https://media.giphy.com/media/5dRd9AhjMxnXOityB5/giphy.gif)
+
 ## Installation
 - Run install.bat from `config` prior to adding the extension
 - Open extensions tab in Chrome, turn developer mode on
