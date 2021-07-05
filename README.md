@@ -3,6 +3,8 @@
 
 ![project demo](https://media.giphy.com/media/5dRd9AhjMxnXOityB5/giphy.gif)
 
+Demo video link (https://vimeo.com/570875673)
+
 ## Installation
 - Run install.bat from `config` prior to adding the extension
 - Open extensions tab in Chrome, turn developer mode on
