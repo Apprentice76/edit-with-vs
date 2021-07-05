@@ -6,10 +6,17 @@
 Demo video link (https://vimeo.com/570875673)
 
 ## Installation
-- Run install.bat from `config` prior to adding the extension
 - Open extensions tab in Chrome, turn developer mode on
 - Select `LOAD UNPACKED`, then select the extension folder in dialog box
-- It should be installed, refresh any page, then right-click & select 'Edit with VS Code' from the context menu
+
+![copying](https://i.imgur.com/ZehlbXg.gif)
+- Copy `ID` of the extension (make sure there isn't any whitespace, you can double-click the `ID` and copy the selection to avoid this )
+
+![pasting](https://i.imgur.com/uBrOY8h.gif)
+- Go back to extension folder and run install.bat from `config` folder
+- Paste the id (Ctrl + V) or (Win + V) to open clipboard and then select the id
+- Press enter
+- That's it, go to any page, then right-click & select 'Edit with VS Code' from the context menu (Refresh older tabs, i.e., those already open before extension was installed, to make this run on those tabs)
 
 ## Limitations
 - Tested only on Chrome
