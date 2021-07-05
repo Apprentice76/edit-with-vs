@@ -12,8 +12,8 @@ chrome.runtime.onInstalled.addListener(() => {
 function doThis(_, tab) {
 	chrome.tabs.sendMessage(tab.id, { q: 'getSelection' }, (resp) => {
 		if (resp?.q === 'success') {
-			chrome.runtime.connectNative('com.hksm.vscode.native')
-			console.log(resp.q)
+			chrome.runtime.sendNativeMessage('com.hksm.vscode.native', {})
+			// console.log(resp.q)
 		}
 	})
 }
